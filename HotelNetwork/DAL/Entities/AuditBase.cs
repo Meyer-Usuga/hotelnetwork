@@ -6,10 +6,10 @@ namespace HotelNetwork.DAL.Entities
     {
         [Key] 
         [Required] 
-        public virtual Guid Id { get; set; }       //id generada, totalmente segura     
+        public virtual Guid Id { get; set; }       
                                                              
-        public virtual DateTime? CreateDate { get; set; }      //fecha de creacion
+        public virtual DateTime? CreateDate { get; set; }      
                                                                 
-        public virtual DateTime? ModifiedDate { get; set; }   //dia de modificacion
+        public virtual DateTime? ModifiedDate { get; set; }   
     }
 }

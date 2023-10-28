@@ -3,7 +3,7 @@ using System.Xml.Linq;
 
 namespace HotelNetwork.DAL.Entities
 {
-    public class Hotels:AuditBase
+    public class Hotels: AuditBase
     {
         [Display(Name = "Hotel")] 
         [MaxLength(50, ErrorMessage = "El campo {0} debe tener máximo 50 caracteres.")] 
@@ -27,5 +27,9 @@ namespace HotelNetwork.DAL.Entities
         [MaxLength(50, ErrorMessage = "El campo {0} debe tener máximo 50 caracteres.")]
         [Required(ErrorMessage = "El campo {0} es obligatorio.")]
         public String City { get; set; }
+
+        [Display(Name = "Habitaciones")]
+        public ICollection<Rooms>? Rooms { get; set; }
+
     }
 }

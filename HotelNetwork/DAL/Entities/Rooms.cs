@@ -23,5 +23,8 @@ namespace HotelNetwork.DAL.Entities
         [Display(Name = "Disponibilidad")]
         [Required(ErrorMessage = "El campo {0} es obligatorio.")]
         public bool Availability { get; set; }
+
+        [Display(Name = "IdHotel")]
+        public Guid hotelId { get; set; }
     }
 }
