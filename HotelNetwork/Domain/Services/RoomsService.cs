@@ -13,5 +13,22 @@ namespace HotelNetwork.Domain.Services
         {
             _context = context;
         }
+
+        public async Task<Room> ValidateAvailabilityRoomAsync(Guid hotelId, int number) 
+        {
+            var room = await _context.Rooms.Where(r => r.Availability == true).FirstOrDefaultAsync(r => r.Number == number && r.hotelId == hotelId);
+            if(room == null)
+            {
+                return null;
+            }
+            else
+            return room;
+        }
+
+        public async Task<String>GetHotelName(Guid hotelId)
+        {
+            var hotel = await _context.Hotels.FirstOrDefaultAsync(h => h.Id == hotelId);
+            return hotel.Name; 
+        }
     }
 }

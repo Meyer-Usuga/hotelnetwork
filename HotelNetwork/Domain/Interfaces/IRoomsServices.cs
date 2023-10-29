@@ -5,6 +5,7 @@ namespace HotelNetwork.Domain.Interfaces
 {
     public interface IRoomsServices
     {
-        //Task<Rooms> ValidateAvailabilityRoomAsync(string number); //consultamos por numero de habitación en la tabla "rooms".  
+        Task<Room> ValidateAvailabilityRoomAsync(Guid hotelId, int number); //consultamos por numero de habitación en la tabla "rooms".  
+        Task<String> GetHotelName(Guid hotelId); //nos servirá para traer el nombre del hotel al que pertenece una habitación. 
     }
 }
