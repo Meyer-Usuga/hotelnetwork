@@ -128,6 +128,42 @@ namespace HotelNetwork.DAL
                         }
                     }
                 });
+
+                _context.Hotels.Add(new Hotel
+                {
+                    CreateDate = DateTime.Now,
+                    Name = "La mansión",
+                    Address = "Crra 106 #99-2",
+                    Phone = "1293211",
+                    City = "Cali",
+                    Starts = 5,
+                    Rooms = new List<Room>()
+                    {
+                        new Room
+                        {
+                            CreateDate = DateTime.Now,
+                            Number = 606,
+                            MaxGuests = 1,
+                            Availability = true
+                        },
+
+                        new Room
+                        {
+                            CreateDate = DateTime.Now,
+                            Number = 707,
+                            MaxGuests = 2,
+                            Availability = false
+                        },
+
+                        new Room
+                        {
+                            CreateDate = DateTime.Now,
+                            Number = 805,
+                            MaxGuests = 3,
+                            Availability = false
+                        }
+                    }
+                });
             }
         }
     }

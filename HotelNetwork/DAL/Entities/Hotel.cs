@@ -16,7 +16,8 @@ namespace HotelNetwork.DAL.Entities
         public String Address { get; set; } 
 
         [Display(Name = "Teléfono")]
-        [RegularExpression("^[0-9]+$", ErrorMessage = "El campo {0} sólo debe contener números.")]       
+        [RegularExpression("^[0-9]+$", ErrorMessage = "El campo {0} sólo debe contener números.")]   
+        //"Todo lo que no sea plata es cadena"
         public String? Phone { get; set; } 
 
         [Display(Name = "Estrellas")]

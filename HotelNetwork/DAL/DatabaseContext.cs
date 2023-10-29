@@ -15,7 +15,6 @@ namespace HotelNetwork.DAL
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Hotel>().HasIndex(c => c.Phone).IsUnique(); //el teléfono debe ser único. 
             modelBuilder.Entity<Room>().HasIndex("Number", "hotelId").IsUnique(); //Las habitaciones de un mismo Hotel deben ser únicas. 
-
             //.. se pueden ir añadiendo más index para todas las tablas aquí. 
         }
 
