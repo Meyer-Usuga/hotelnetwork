@@ -14,12 +14,27 @@ builder.Services.AddDbContext<DatabaseContext>(options => options.UseSqlServer(b
 
 //Dependencias para las interfaces. 
 builder.Services.AddScoped<IHotelsServices, HotelsService>();
+builder.Services.AddScoped<IRoomsServices, RoomsService>();
+builder.Services.AddTransient<SeederDB>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+
+//para el seeder
+SeederData();
+void SeederData()
+{
+    IServiceScopeFactory? scopedFactory = app.Services.GetService<IServiceScopeFactory>();
+
+    using (IServiceScope? scope = scopedFactory.CreateScope())
+    {
+        SeederDB? service = scope.ServiceProvider.GetService<SeederDB>();
+        service.SeederAsync().Wait();
+    }
+}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

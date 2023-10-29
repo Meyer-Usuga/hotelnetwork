@@ -20,7 +20,7 @@ namespace HotelNetwork.Controllers
         [HttpGet, ActionName("Get")]
         [Route("Get")]
 
-        public async Task<ActionResult<IEnumerable<Hotels>>> GetHotelsAsync()
+        public async Task<ActionResult<IEnumerable<Hotel>>> GetHotelsAsync()
         {
 
             var hotels = await _hotelsServices.GetHotelsAsync(); 
@@ -35,7 +35,7 @@ namespace HotelNetwork.Controllers
         [HttpPost, ActionName("Create")]
         [Route("Create")]
 
-        public async Task<ActionResult> CreateHotelAsync(Hotels hotel)
+        public async Task<ActionResult> CreateHotelAsync(Hotel hotel)
         {
             try
             {

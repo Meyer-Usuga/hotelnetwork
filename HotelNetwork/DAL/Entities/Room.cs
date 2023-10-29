@@ -3,13 +3,8 @@ using System.Xml.Linq;
 
 namespace HotelNetwork.DAL.Entities
 {
-    public class Rooms : AuditBase
+    public class Room : AuditBase
     {
-        [Display(Name = "Habitaciión")]
-        [MaxLength(50, ErrorMessage = "El campo {0} debe tener máximo 50 caracteres.")]
-        [Required(ErrorMessage = "El campo {0} es obligatorio.")]
-        public String Name { get; set; }
-
         [Display(Name = "Número")]
         [RegularExpression("^[0-9]+$", ErrorMessage = "El campo {0} sólo debe contener números.")]
         [Required(ErrorMessage = "El campo {0} es obligatorio.")]

@@ -13,13 +13,13 @@ namespace HotelNetwork.Domain.Services
         { 
             _context = context;
         }
-        public async Task<IEnumerable<Hotels>> GetHotelsAsync() 
+        public async Task<IEnumerable<Hotel>> GetHotelsAsync() 
         {                              
             var hotels = await _context.Hotels.ToListAsync(); 
             return hotels;
         }
 
-        public async Task<Hotels> CreateHotelAsync(Hotels hotel)
+        public async Task<Hotel> CreateHotelAsync(Hotel hotel)
         {
             try
             {

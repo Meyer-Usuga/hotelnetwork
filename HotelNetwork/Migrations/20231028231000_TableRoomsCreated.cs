@@ -14,7 +14,6 @@ namespace HotelNetwork.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Number = table.Column<int>(type: "int", nullable: false),
                     MaxGuests = table.Column<int>(type: "int", nullable: false),
                     Availability = table.Column<bool>(type: "bit", nullable: false),
